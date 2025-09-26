@@ -19,5 +19,13 @@ def task_2():
     a = [1, 2, 3, 5, 8, 13, 21]
     print("Task 2:")
     print(a[:3])
+    print("Those are Fibonacci numbers")
 
 task_2()
+print()
+
+def task_3(num: float) -> float:
+    print("Task 3:")
+    return num * num
+
+print(task_3(55))
