@@ -19,15 +19,33 @@ def max_num() -> None:
         print("Numbers are equal!")
 
 
+def dif_by_135() -> None:
+    try:
+        num1: int = int(input("Insert the first number: "))
+        num2: int = int(input("Insert the second number: "))
+    except ValueError:
+        print("Incorrect input, please try again.")
+        return
+
+    print("Is the difference between the numbers 135?")
+    if num1 - num2 == (135 or -135):
+        print(" Yes")
+    else:
+        print(" No")
+
+
 def call_func(task_num: int) -> None:
     if task_num == 1:
         max_num()
+    elif task_num == 2:
+        dif_by_135()
     else:
         print("Incorrect input!")
 
 
 def choose_task() -> None:
     print(" Task 1: print the bigger number")
+    print(" Task 2: are the numbers different by 135?")
     print("Choose a task:")
 
     try:
