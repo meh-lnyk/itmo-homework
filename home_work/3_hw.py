@@ -41,10 +41,6 @@ def season_name() -> None:
         print("Incorrect input, please try again.")
         return
 
-    if month_num > 12:
-        print("Incorrect input, please try again.")
-        return
-
     print("The season is:")
     match month_num:
         case 1 | 2 | 12:
@@ -55,6 +51,24 @@ def season_name() -> None:
             print(" Summer")
         case 9 | 10 | 11:
             print(" Fall")
+        case _:
+            print("Incorrect input, please try again.")
+
+
+def bigger_than_10() -> None:
+    try:
+        num_1: int = int(input("Insert the first number: "))
+        num_2: int = int(input("Insert the second number: "))
+        num_3: int = int(input("Insert the third number: "))
+    except ValueError:
+        print("Incorrect input, please try again.")
+        return
+
+    print("Are all the numbers bigger than 10?")
+    if num_1 & num_2 & num_3 > 10:
+        print(" Yes")
+    else:
+        print(" No")
 
 
 def call_func(task_num: int) -> None:
@@ -64,6 +78,8 @@ def call_func(task_num: int) -> None:
         dif_by_135()
     elif task_num == 3:
         season_name()
+    elif task_num == 4:
+        bigger_than_10()
     else:
         print("Incorrect input!")
 
@@ -72,6 +88,7 @@ def choose_task() -> None:
     print(" Task 1: print the bigger number")
     print(" Task 2: are the numbers different by 135?")
     print(" Task 3: print the name of the season")
+    print(" Task 4: are the numbers bigger than 10?")
     print("Choose a task:")
 
     try:
