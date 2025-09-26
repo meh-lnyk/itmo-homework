@@ -34,11 +34,36 @@ def dif_by_135() -> None:
         print(" No")
 
 
+def season_name() -> None:
+    try:
+        month_num: int = int(input("Insert the month number: "))
+    except ValueError:
+        print("Incorrect input, please try again.")
+        return
+
+    if month_num > 12:
+        print("Incorrect input, please try again.")
+        return
+
+    print("The season is:")
+    match month_num:
+        case 1 | 2 | 12:
+            print(" Winter")
+        case 3 | 4 | 5:
+            print(" Spring")
+        case 6 | 7 | 8:
+            print(" Summer")
+        case 9 | 10 | 11:
+            print(" Fall")
+
+
 def call_func(task_num: int) -> None:
     if task_num == 1:
         max_num()
     elif task_num == 2:
         dif_by_135()
+    elif task_num == 3:
+        season_name()
     else:
         print("Incorrect input!")
 
@@ -46,6 +71,7 @@ def call_func(task_num: int) -> None:
 def choose_task() -> None:
     print(" Task 1: print the bigger number")
     print(" Task 2: are the numbers different by 135?")
+    print(" Task 3: print the name of the season")
     print("Choose a task:")
 
     try:
