@@ -5,6 +5,7 @@ def task_1() -> None:
     var_list: list = [1, 1.0, "one"]
     var_bool: bool = True
 
+    print("Task 1:")
     print(type(var_int))
     print(type(var_float))
     print(type(var_str))
@@ -12,3 +13,11 @@ def task_1() -> None:
     print(type(var_bool))
 
 task_1()
+print()
+
+def task_2():
+    a = [1, 2, 3, 5, 8, 13, 21]
+    print("Task 2:")
+    print(a[:3])
+
+task_2()
