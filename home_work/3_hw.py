@@ -92,6 +92,15 @@ def find_positive() -> None:
         print("Incorrect input!")
 
 
+def count_days() -> None:
+    year_num = int(input("Insert the amount of years: "))
+    month_num = int(input("Insert the amount of months: "))
+    months_in_year = 12
+    days_in_month = 29
+    days_in_year = months_in_year * days_in_month # =348 in this assignment
+    print(f"The amount of days in this period is {month_num*days_in_month+year_num*days_in_year}.")
+
+
 def call_func(task_num: int) -> None:
     if task_num == 1:
         max_num()
@@ -103,6 +112,8 @@ def call_func(task_num: int) -> None:
         bigger_than_10()
     elif task_num == 5:
         find_positive()
+    elif task_num == 6:
+        count_days()
     else:
         print("Incorrect input!")
 
@@ -113,6 +124,7 @@ def choose_task() -> None:
     print(" Task 3: print the name of the season")
     print(" Task 4: are the numbers bigger than 10?")
     print(" Task 5: find positives in a list")
+    print(" Task 6: count days")
     print("Choose a task:")
 
     try:
