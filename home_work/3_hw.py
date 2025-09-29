@@ -71,6 +71,27 @@ def bigger_than_10() -> None:
         print(" No")
 
 
+def find_positive() -> None:
+    user_input = input("Enter 5 numbers separated by spaces: ")
+    input_list = user_input.split()
+    try:
+        num_list = [int(s) for s in input_list]
+    except ValueError:
+        print("All inputs must be integers!")
+        return
+
+    if len(num_list) == 5:
+        num_pos = 0
+        for num in num_list:
+            if num > 0:
+                num_pos += 1
+        print(f"The number of positive integers in the list is {num_pos}")
+    elif len(num_list) != 5:
+        print("You must enter exactly 5 numbers.")
+    else:
+        print("Incorrect input!")
+
+
 def call_func(task_num: int) -> None:
     if task_num == 1:
         max_num()
@@ -80,6 +101,8 @@ def call_func(task_num: int) -> None:
         season_name()
     elif task_num == 4:
         bigger_than_10()
+    elif task_num == 5:
+        find_positive()
     else:
         print("Incorrect input!")
 
@@ -89,6 +112,7 @@ def choose_task() -> None:
     print(" Task 2: are the numbers different by 135?")
     print(" Task 3: print the name of the season")
     print(" Task 4: are the numbers bigger than 10?")
+    print(" Task 5: find positives in a list")
     print("Choose a task:")
 
     try:
