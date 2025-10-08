@@ -1,8 +1,9 @@
 from selenium.webdriver.common.by import By
 from selenium  import webdriver
 
+driver = webdriver.Chrome()
+
 def check_login(s: str) -> bool:
-    driver = webdriver.Chrome()
     driver.get(s)
 
     is_all_elems_found = False
